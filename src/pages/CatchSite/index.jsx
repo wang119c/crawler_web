@@ -1,17 +1,26 @@
 import React from "react";
 import urls from "../../config/urls";
 import { Card, List, Button } from "antd";
+import request from "../../utils/request";
 
 function Item(item) {
   function startCrawler(id) {
     // 把对象处理成数组
     const newUrls = [...urls.market, ...urls.dex, ...urls.browser];
-    const url = newUrls.filter((item) => {
+    const filterUrl = newUrls.filter((item) => {
       return item.id === id;
     });
-      
-
-    console.log(url[0].website);
+    const urlObj = filterUrl[0];
+    request({
+      method: "get",
+      url: urlObj.api,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   return (
