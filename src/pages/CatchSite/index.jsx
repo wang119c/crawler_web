@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import urls from "../../config/urls";
 import { Card, List, Button } from "antd";
 import request from "../../utils/request";
 
 function Item(item) {
+  const [btnState, setBtnState] = useState(0);
+  const [showLoad, setShowLoad] = useState(false);
+
   function startCrawler(id) {
+    if (btnState === 1) return;
+    setShowLoad(true);
     // 把对象处理成数组
     const newUrls = [...urls.market, ...urls.dex, ...urls.browser];
     const filterUrl = newUrls.filter((item) => {
@@ -16,20 +21,33 @@ function Item(item) {
       url: urlObj.api,
     })
       .then((res) => {
-        console.log(res);
+        setBtnState(1);
+        setShowLoad(false);
+        // console.log(res);
       })
       .catch((error) => {
         console.log(error);
+        setShowLoad(false);
       });
   }
 
   return (
     <List.Item>
       <div style={{ display: "flex" }}>
-        <div style={{ marginRight: "20px" }}> {item.website} </div>
-        <Button type="primary" onClick={() => startCrawler(item.id)}>
-          开始
-        </Button>
+        <div style={{ marginRight: "20px" }}>
+          {" "}
+          {item.website}  {item.process ? "待开发" : ""}{" "}
+        </div>
+        {btnState === 0 && (
+          <Button
+            type="primary"
+            onClick={() => startCrawler(item.id)}
+            loading={showLoad}
+          >
+            开始
+          </Button>
+        )}
+        {btnState === 1 && <Button type="danger">完成</Button>}
       </div>
     </List.Item>
   );
@@ -50,11 +68,31 @@ function Market() {
 }
 
 function Dex() {
-  return <>Dex</>;
+  const dex = urls.dex;
+  return (
+    <div className="site-card-border-less-wrapper">
+      <List
+        size="small"
+        bordered
+        dataSource={dex}
+        renderItem={(item) => Item(item)}
+      />
+    </div>
+  );
 }
 
-function Broswer() {
-  return <>Broswer</>;
+function Browser() {
+  const browser = urls.browser;
+  return (
+    <div className="site-card-border-less-wrapper">
+      <List
+        size="small"
+        bordered
+        dataSource={browser}
+        renderItem={(item) => Item(item)}
+      />
+    </div>
+  );
 }
 
 const tabListNoTitle = [
@@ -74,7 +112,7 @@ const tabListNoTitle = [
 const contentListNoTitle = {
   market: <Market />,
   dex: <Dex />,
-  broswer: <Broswer />,
+  browser: <Browser />,
 };
 
 class CatchSite extends React.Component {
