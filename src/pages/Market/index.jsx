@@ -138,22 +138,24 @@ class Browser extends React.Component {
   render() {
     const { data, pagination, loading } = this.state;
     return (
-      <div>
+      <div style={{height:'100%',overflowY: "scroll"}}>
         <div style={{ marginBottom: "10px" }}>
           <Button type="primary" onClick={() => this.downloadExcel()}>
             下载excel
           </Button>
         </div>
-        <Table
-          size="small"
-          scroll={{ y: 400, x: 3000 }}
-          columns={columns}
-          rowKey={(record) => record._id}
-          dataSource={data}
-          pagination={pagination}
-          loading={loading}
-          onChange={this.handleTableChange}
-        />
+        <div>
+          <Table
+            size="small"
+            scroll={{ x: 3000 }}
+            columns={columns}
+            rowKey={(record) => record._id}
+            dataSource={data}
+            pagination={pagination}
+            loading={loading}
+            onChange={this.handleTableChange}
+          />
+        </div>
       </div>
     );
   }

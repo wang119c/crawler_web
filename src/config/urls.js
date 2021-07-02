@@ -26,7 +26,7 @@ const urls = {
       api: "/coinvote/coins",
       id: 4,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://coinalpha.app/",

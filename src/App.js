@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Layout } from "antd";
-import { Redirect, Route } from "react-router-dom";
+import {  Route } from "react-router-dom";
 import CaSider from "./components/CaSider";
 import Market from "./pages/Market";
 import CatchSite from "./pages/CatchSite";
