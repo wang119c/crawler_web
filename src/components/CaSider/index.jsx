@@ -8,7 +8,7 @@ class CaSider extends React.Component {
       <>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1">
-            <NavLink to="/catch_site">抓取网站</NavLink>
+            <NavLink to="/">抓取网站</NavLink>
           </Menu.Item>
 
           <Menu.Item key="2">

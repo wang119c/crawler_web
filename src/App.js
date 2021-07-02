@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Layout } from "antd";
-import { Route } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 import CaSider from "./components/CaSider";
 import Market from "./pages/Market";
 import CatchSite from "./pages/CatchSite";
@@ -34,7 +34,7 @@ class App extends React.Component {
               minHeight: 280,
             }}
           >
-            <Route path="/catch_site" component={CatchSite} />
+            <Route path="/" exact component={CatchSite} />
             <Route path="/market_data" component={Market} />
             <Route path="/dex_data" component={Dex} />
             <Route path="/browser_data" component={Browser} />

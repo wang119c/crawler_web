@@ -19,7 +19,7 @@ const urls = {
       api: "/coingecko/recently",
       id: 3,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://coinvote.cc/coins/1&order_by=today",
