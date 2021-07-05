@@ -40,7 +40,7 @@ const urls = {
       api: "/coinsniper",
       id: 6,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://coinhunt.cc/",
