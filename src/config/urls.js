@@ -54,7 +54,7 @@ const urls = {
       api: "/livecoinwatch/trending",
       id: 8,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://100xcoinhunt.com/today",
