@@ -40,14 +40,14 @@ const urls = {
       api: "/coinsniper",
       id: 6,
       status: 0,
-      process: 0,
+      process: 1,
     },
     {
       website: "https://coinhunt.cc/",
       api: "/coinhunt",
       id: 7,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://www.livecoinwatch.com/trending",
