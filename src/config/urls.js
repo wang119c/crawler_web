@@ -68,7 +68,7 @@ const urls = {
       api: "/cointoplist",
       id: 10,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://freshcoins.io/",
