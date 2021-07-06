@@ -58,10 +58,10 @@ const urls = {
     },
     {
       website: "https://100xcoinhunt.com/today",
-      api: "/100xcoinhunt/today",
+      api: "/l100xcoinhunt/today",
       id: 9,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://cointoplist.net/",
