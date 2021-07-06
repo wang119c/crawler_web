@@ -75,7 +75,7 @@ const urls = {
       api: "/freshcoins",
       id: 11,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://cryptotokenspace.com/Tokens",
