@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import urls from "../../config/urls";
 import { Card, List, Button } from "antd";
 import request from "../../utils/request";
@@ -6,6 +6,8 @@ import request from "../../utils/request";
 function Item(item) {
   const [btnState, setBtnState] = useState(0);
   const [showLoad, setShowLoad] = useState(false);
+  let inputRef = useRef();
+  let numRef = useRef();
 
   function startCrawler(id) {
     if (btnState === 1) return;
@@ -15,10 +17,10 @@ function Item(item) {
     const filterUrl = newUrls.filter((item) => {
       return item.id === id;
     });
-    const urlObj = filterUrl[0];
+    const urlObj = filterUrl[0]
     request({
       method: "get",
-      url: urlObj.api,
+      url: `${urlObj.api}?port=${inputRef.value}&num=${numRef.value}` ,
     })
       .then((res) => {
         setBtnState(1);
@@ -36,7 +38,13 @@ function Item(item) {
       <div style={{ display: "flex" }}>
         <div style={{ marginRight: "20px" }}>
           {" "}
-          {item.website}  {item.process ? "待开发" : ""}{" "}
+          {item.website} {item.process ? "待开发" : ""}{" "}
+          {item.needProxy && (
+            <>
+              <input placeholder="代理端口:默认是11000" ref={(node) => (inputRef = node)}/>
+              <input placeholder="请求条数:默认是20条" ref={(node) => (numRef = node)}/>
+            </>
+          )}
         </div>
         {btnState === 0 && (
           <Button

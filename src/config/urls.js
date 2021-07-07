@@ -76,6 +76,7 @@ const urls = {
       id: 11,
       status: 0,
       process: 0,
+      needProxy: true
     },
     {
       website: "https://cryptotokenspace.com/Tokens",
@@ -89,7 +90,7 @@ const urls = {
       api: "/coinseek",
       id: 13,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://gemfinder.cc/",
