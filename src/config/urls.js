@@ -111,7 +111,7 @@ const urls = {
       api: "/rival",
       id: 16,
       status: 0,
-      process: 1,
+      process: 0,
     },
   ],
   dex: [
