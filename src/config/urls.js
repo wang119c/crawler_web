@@ -120,7 +120,7 @@ const urls = {
       api: "/pancakeswap/swap",
       id: 17,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://app.uniswap.org/#/swap",

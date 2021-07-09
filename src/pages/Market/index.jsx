@@ -82,7 +82,7 @@ const getRandomuserParams = (params) => ({
   ...params,
 });
 
-class Browser extends React.Component {
+class Market extends React.Component {
   state = {
     data: [],
     pagination: {
@@ -161,4 +161,4 @@ class Browser extends React.Component {
   }
 }
 
-export default Browser;
+export default Market;
