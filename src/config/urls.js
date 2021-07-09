@@ -127,14 +127,14 @@ const urls = {
       api: "/uniswap/swap",
       id: 18,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://ht.mdex.com/#/swap?lang=zh-CN",
       api: "/mdex/swap",
       id: 19,
       status: 0,
-      process: 1,
+      process: 0,
     },
   ],
   browser: [
