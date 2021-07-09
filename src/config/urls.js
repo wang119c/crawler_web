@@ -83,7 +83,7 @@ const urls = {
       api: "/cryptotokenspace/tokens",
       id: 12,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://www.coinseek.xyz/",
@@ -153,8 +153,8 @@ const urls = {
       process: 1,
     },
     {
-      website: "https://etherscan.io/",
-      api: "/etherscan",
+      website: "https://tronscan.org/#/",
+      api: "/tronscan",
       id: 22,
       status: 0,
       process: 1,
