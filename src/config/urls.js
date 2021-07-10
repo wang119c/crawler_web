@@ -90,7 +90,7 @@ const urls = {
       api: "/coinseek",
       id: 13,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://gemfinder.cc/",
