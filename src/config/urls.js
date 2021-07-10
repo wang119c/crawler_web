@@ -33,7 +33,7 @@ const urls = {
       api: "/coinalpha",
       id: 5,
       status: 0,
-      process: 1,
+      process: 0,
     },
     {
       website: "https://coinsniper.net/",
